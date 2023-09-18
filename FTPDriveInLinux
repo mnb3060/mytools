@@ -1,0 +1,16 @@
+#https://linuxconfig.org/mount-remote-ftp-directory-host-locally-into-linux-filesystem
+
+#Since we do not want to put any passwords in the /etc/fstab file, we will first create a /root/.netrc file with a ftp username and password using this format:
+  nano /root/.netrc
+    machine my-ftp-location.local
+    login ftp-user
+    password ftp-pass
+# Next, change permissions of this file to 600:
+# 
+chmod 600 /root/.netrc
+#Check uid and gid of your non-root user. This user will have access to ftp mount directory:
+
+#In the next step add the following line to your /etc/fstab file ( change credentials for your ftp user ):
+  curlftpfs#my-ftp-location.local /mnt/my_ftp fuse allow_other,uid=1000,gid=1000,umask=0022 0 0
+#Now mount the remote FTP directory with:
+mount -a
