@@ -1,4 +1,4 @@
-#####
+############
 #Setting up the SOCKS5 proxy connection
 #You are going to use the -D option in your SSH command. This allocates a socket listing on a port. Connections made to this port are forwarded over the (secure) channel.
 
