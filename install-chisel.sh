@@ -1,3 +1,5 @@
+#!/bin/sh
+
 echo "install chisel from the github rep"
 mkdir chisel && cd chisel
 
@@ -7,10 +9,10 @@ wget https://github.com/jpillora/chisel/releases/download/v1.9.1/chisel_1.9.1_li
 echo "setup chisel for server or client? type s for server and c for client"
 read chtype
 
-if[chtype == 's']
+if[$chtype == 's']
   then
   echo 'server selected'
-elif[chtype == 'c']
+elif[$chtype == 'c']
   then
   echo 'client selected'
 else
