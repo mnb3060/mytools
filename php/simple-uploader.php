@@ -4,6 +4,7 @@
   <title>Upload your files</title>
 </head>
 <body>
+  Please create uploads folder in this path
   <form enctype="multipart/form-data" action="upload.php" method="POST">
     <p>Upload your file</p>
     <input type="file" name="uploaded_file"></input><br />
