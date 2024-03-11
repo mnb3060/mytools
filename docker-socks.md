@@ -15,17 +15,20 @@ ssh -D 8080 172.31.10.5
 
 #with the following content:
 
+```
 [Service]
 Environment="HTTP_PROXY=socks5://127.0.0.1:8080"
 Environment="HTTPS_PROXY=socks5://127.0.0.1:8080"
-
+```
 #(You most likely do not even need the HTTP_PROXY line, but it also doesn’t hurt. ;-) )
 
 #Once this file is in place, you need to restart the Docker service:
 
-systemctl daemon-reload
-systemctl restart docker
+systemctl daemon-reload && systemctl restart docker
 
 #When you run the following command again, the traffic is tunneled via your proxy.
 
 docker pull registry.example.com:5678/image
+
+#for check run
+sudo systemctl show --property=Environment docker
