@@ -1,5 +1,5 @@
 <?php
-$contents = file_get_contetnts('https://yoursite.com/');
+$contents = file_get_contents('https://yoursite.com/');
 $dom = new DOMDocument();
 @$dom->loadHTML($contents);
 $xpath = new DOMXpath($dom);	
