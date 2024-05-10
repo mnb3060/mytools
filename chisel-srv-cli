@@ -38,8 +38,14 @@ WantedBy=multi-user.target
 #######################
 #######################
   
-systemctl enable chisel
-systemctl start chisel
+systemctl enable chisel && systemctl start chisel
+
 ## run proxy on 2480
+## for check the service 
 
 service chisel status
+
+# if yoou want to run apt service over your chisel proxy
+echo "Acquire::socks5::Proxy \"socks5://127.0.0.1:2480\";" > /etc/apt/apt.conf.d/81socksproxy
+
+
