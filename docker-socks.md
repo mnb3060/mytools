@@ -32,3 +32,18 @@ Environment="HTTPS_PROXY=socks5://127.0.0.1:8080"
 
 #for check run
 ```sudo systemctl show --property=Environment docker```
+
+# if install docker using snap edit this file
+```
+nano /etc/systemd/system/snap.docker.dockerd.service
+```
+# add this lines at the end of file
+```
+[Service]
+Environment="HTTP_PROXY=socks5://127.0.0.1:8080"
+Environment="HTTPS_PROXY=socks5://127.0.0.1:8080"
+```
+# and then restart the snapd and daemon to enable proxy...
+```
+sudo systemctl daemon-reload && sudo snap restart docker
+```
