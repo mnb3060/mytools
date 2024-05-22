@@ -1,9 +1,11 @@
 ## install chisel
-`mkdir chisel && cd chisel`
-
-`wget https://github.com/jpillora/chisel/releases/download/v1.9.1/chisel_1.9.1_linux_amd64.gz && gunzip chisel_1.9.1_linux_amd64.gz && chmod +x chisel_1.9.1_linux_amd64`
+```
+mkdir chisel && cd chisel && wget https://github.com/jpillora/chisel/releases/download/v1.9.1/chisel_1.9.1_linux_amd64.gz && gunzip chisel_1.9.1_linux_amd64.gz && chmod +x chisel_1.9.1_linux_amd64
+```
 # enable service for srv/cli
-`nano /etc/systemd/system/chisel.service`
+```
+nano /etc/systemd/system/chisel.service
+```
 
 # for server 
 
@@ -44,7 +46,9 @@ WantedBy=multi-user.target
 #######################
 #######################
   
-`systemctl enable chisel && systemctl start chisel`
+```
+systemctl enable chisel && systemctl start chisel
+```
 
 ## run proxy on 2480
 ## for check the service 
@@ -52,6 +56,8 @@ WantedBy=multi-user.target
 `service chisel status`
 
 # if yoou want to run apt service over your chisel proxy
-`echo "Acquire::socks5::Proxy \"socks5://127.0.0.1:2480\";" > /etc/apt/apt.conf.d/81socksproxy`
+```
+echo "Acquire::socks5::Proxy \"socks5://127.0.0.1:2480\";" > /etc/apt/apt.conf.d/81socksproxy
+```
 
 
