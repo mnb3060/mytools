@@ -1,9 +1,11 @@
-##install chisel
+## install chisel
 mkdir chisel && cd chisel
 wget https://github.com/jpillora/chisel/releases/download/v1.9.1/chisel_1.9.1_linux_amd64.gz && gunzip chisel_1.9.1_linux_amd64.gz && chmod +x chisel_1.9.1_linux_amd64
-
-#for server 
+# enable service for srv/cli
 nano /etc/systemd/system/chisel.service
+
+# for server 
+
 ############# for running on 8080 port and 8443(socks proxy running)
 [Unit]
 Description=Chisel Service
@@ -21,6 +23,7 @@ WantedBy=multi-user.target
 
 ####################
 
+# for client service
 ############# client service
   
 [Unit]
