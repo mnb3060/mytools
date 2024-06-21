@@ -1,16 +1,12 @@
 FROM chialab/php:7.4-apache
 
 #RUN echo "nameserver 127.0.0.11" > /etc/resolv.conf
+#RUN sed -i 's/deb.debian.org/cdn-fastly.deb.debian.org/g' /etc/apt/sources.list
 
 #ADD https://github.com/mlocati/docker-php-extension-installer/releases/latest/download/install-php-extensions /usr/local/bin/
 
 #RUN chmod +x /usr/local/bin/install-php-extensions
 
-#RUN sed -i 's/deb.debian.org/cdn-fastly.deb.debian.org/g' /etc/apt/sources.list
-#RUN sed -i 's/deb.debian.org/debian.mirror.afranet.com/g' /etc/apt/sources.list
-#RUN sed -i 's/deb.debian.org/151.101.246.132/g' /etc/apt/sources.list
-
-#RUN echo "151.101.246.132     deb.debian.org" >> /etc/hosts
 
 #RUN install-php-extensions gd xdebug mysqli curl mbstring imagick
 #RUN docker-php-ext-install gd mysqli curl mbstring imagick
@@ -18,9 +14,11 @@ FROM chialab/php:7.4-apache
 
 # php ext
 RUN apt-get update && apt-get install -y libmemcached-dev libssl-dev zlib1g-dev 
-#RUN pecl install memcached-3.2.0 
+#RUN pecl install memcached
+
 RUN	docker-php-ext-enable memcached
 RUN docker-php-ext-install opcache
+RUN	docker-php-ext-enable opcache
 
 #OpCache
 ENV PHP_OPCACHE_VALIDATE_TIMESTAMPS="0"
