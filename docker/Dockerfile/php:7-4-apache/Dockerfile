@@ -14,6 +14,8 @@ FROM chialab/php:7.4-apache
 
 # php ext
 RUN apt-get update && apt-get install -y libmemcached-dev libssl-dev zlib1g-dev 
+# install imagemagick 
+RUN apt install -y libpng-dev libjpeg-dev libtiff-dev imagemagick
 #RUN pecl install memcached
 
 RUN	docker-php-ext-enable memcached
