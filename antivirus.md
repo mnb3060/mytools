@@ -26,3 +26,4 @@
 ## show only warning
 ```sudo cat /var/log/chkrootkit/chkrootkit.log | grep -i warning```
 
+src: https://www.interserver.net/tips/kb/scan-ubuntu-server-for-malware-and-rootkits/
