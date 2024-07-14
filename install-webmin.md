@@ -7,3 +7,8 @@ echo "deb [signed-by=/usr/share/keyrings/webmin.gpg] http://download.webmin.com/
 sudo apt update
 sudo apt -y install webmin
 ```
+# Dont Forget
+## change port
+## change password
+## lets encrypt...
+## two factor auth...
