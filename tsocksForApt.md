@@ -22,6 +22,8 @@ server_port = 1080
 ######
 ### now you can enjoy with tsocks command before other commands in cli 
 ## for test type this line
-`tsocks curl ifconfig.io`
-return your proxy ip
+```
+tsocks curl ifconfig.io
+```
+-> return your proxy ip
 # enjoy!
