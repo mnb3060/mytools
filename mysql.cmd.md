@@ -1,5 +1,27 @@
 # Some mysql/mariadb useful command
 
+## Create mysql user
+```
+CREATE USER 'sammy'@'localhost' IDENTIFIED BY 'password';
+```
+### For use in phpmyadmin use this plugin
+```
+CREATE USER 'sammy'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';
+```
+Or alter an exist one:
+```
+ALTER USER 'sammy'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';
+```
+
+### Grant user to db
+```
+GRANT CREATE, ALTER, DROP, INSERT, UPDATE, DELETE, SELECT, REFERENCES, RELOAD on *.* TO 'sammy'@'localhost' WITH GRANT OPTION;
+```
+## dont forget flush after all changes in mysql
+```
+FLUSH PRIVILEGES;
+```
+
 ## Migrate from server a to server b
 ```
 mysqldump -uuser -ppassword myDatabase | mysql -hremoteserver -uremoteuser -premoteserverpassword 
