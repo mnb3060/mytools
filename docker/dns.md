@@ -1,8 +1,9 @@
-Create a `/etc/docker/daemon.json` file with this content:
+Create a `/etc/docker/daemon.json` file
 ```
 mkdir /etc/docker
 nano /etc/docker/daemon.json
 ```
+ with this content:
 ```
 {
   "dns": ["8.8.8.8", "8.8.4.4"]
