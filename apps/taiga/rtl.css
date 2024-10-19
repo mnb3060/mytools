@@ -1,0 +1,115 @@
+
+body {
+	font-family: Vazirmatn RD FD NL !important;
+	font-variation-settings: "wght" 400
+}
+
+* {
+	font-family: Vazirmatn RD FD NL !important;
+	font-variation-settings: "wght" 400
+}
+.nav-bar-support .navbar-dropdown {
+	margin-left: 108px
+}
+
+.topnav-dropdown-wrapper .navbar-dropdown-notifications .header:after,
+.topnav-dropdown-wrapper .navbar-dropdown-notifications .header:before {
+	left: 147px !important;
+}
+.topnav-dropdown-wrapper .navbar-dropdown-notifications {
+	left: -120px;
+
+}
+
+@-webkit-keyframes highlightFadeOut {
+	0 {
+		background: #5cbaa9;
+		font-size: .75rem;
+		height: 22px;
+		left: 49px;
+		line-height: 22px;
+		top: -1px;
+		width: 22px
+	}
+
+	20% {
+		font-size: .7rem;
+		height: 20px;
+		left: 50px;
+		line-height: 20px;
+		top: 0;
+		width: 20px
+	}
+
+	100% {
+		background: #25a28c
+	}
+}
+.navbar-dropdown.dropdown-user ul:before {
+	left: 48px;
+}
+.navbar-dropdown.dropdown-user {
+	left: 0;
+}
+
+.navbar .topnav-dropdown-wrapper:hover .navbar-dropdown {
+	-webkit-animation: dropdownFade .2s cubic-bezier(.09, 0, .99, .01) both;
+	animation: dropdownFade .2s cubic-bezier(.09, 0, .99, .01) both;
+	display: block;
+	left: -197px
+}
+
+.dropdown-project-list .dropdown-project-list-link img {
+	margin-left: 10px;
+
+}
+
+.placeholder-collapsed .placeholder-collapsed-wrapper {
+	transform: rotate(-180deg);
+	writing-mode: tb-rl
+
+}
+
+
+.taskboard-table-body .column-fold.taskboard-row,
+.taskboard-table-body .row-fold.taskboard-row {
+	direction: rtl;
+}
+
+.taskboard-table-body .taskboard-column.new {
+	-webkit-animation: new-task-status-blink .5s ease-in;
+	animation: new-task-status-blink .5s ease-in
+}
+
+.taskboard-table-body .taskboard-table-inner {
+	direction: rtl;
+}
+
+.taskbord-utility-wrapper {
+	direction: ltr;
+}
+
+.taskboard-table-header {
+	direction: ltr;
+	right: 21px
+}
+
+.taskboard-table-header .taskboard-table-inner {
+
+	position: relative
+}
+
+.rtl .kanban tg-filter,
+.rtl .taskboard tg-filter {
+	left: 0;
+	right: 268px;
+
+}
+
+.rtl .navbar .nav-right img {
+	margin-right: -10px
+}
+
+.auth fieldset {
+	direction: ltr
+}
