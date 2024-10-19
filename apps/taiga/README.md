@@ -5,7 +5,8 @@
 ## migrate
 
 ## taiga save html folder
-```docker cp taiga-docker-taiga-front-1:/usr/share/nginx/html html
+```
+docker cp taiga-docker-taiga-front-1:/usr/share/nginx/html html
 ```
 ## rtl and vazirmatn font load (for example v 1686755246163)
 ```
