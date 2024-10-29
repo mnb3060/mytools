@@ -4,7 +4,15 @@
 ```
 docker run redis
 ```
-### add redis to your project network
+
+## build phpredis on docker php image 
+
+```
+RUN pecl install redis
+```
+src: https://github.com/phpredis/phpredis/blob/develop/INSTALL.md
+
+### add redis container to your project network
 
 ## Add these lines to php.ini for 'redis' server name
 ```
