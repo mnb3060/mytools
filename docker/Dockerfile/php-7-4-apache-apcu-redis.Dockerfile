@@ -20,13 +20,15 @@ ENV PHP_OPCACHE_VALIDATE_TIMESTAMPS="0"
 RUN pecl install APCu \
 && docker-php-ext-enable apcu \
 && echo "apc.enabled=1" >> /usr/local/etc/php/conf.d/apcu.ini \
-    && echo "apc.enable_cli=1" >> /usr/local/etc/php/conf.d/apcu.ini 
+&& echo "apc.enable_cli=1" >> /usr/local/etc/php/conf.d/apcu.ini 
 # Xcache
 #RUN cd /usr/local/src && wget http://xcache.lighttpd.net/pub/Releases/1.3.2/xcache-1.3.2.tar.gz && tar -xzf xcache-1.3.2.tar.gz && cd xcache-1.3.2 && phpize && ./configure --with-php-config=/usr/bin/php-config --enable-xcache --enable-xcache-optimizer --enable-xcache-coverager && make && make install
 
 #redis
-RUN pecl install redis
-
+RUN pecl install redis \
+&& docker-php-ext-enable redis \
+&& echo "session.save_handler = redis" >> /usr/local/etc/php/conf.d/redis.ini \
+&& echo "session.save_path = tcp://redis:6379" >> /usr/local/etc/php/conf.d/redis.ini 
 # apache
 RUN a2enmod rewrite
 RUN a2enmod socache_shmcb
