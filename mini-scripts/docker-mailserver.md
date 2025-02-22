@@ -75,6 +75,11 @@ mail._domainkey IN TXT ( "v=DKIM1; k=rsa; "
 "5QMZBJ/JuJK/s+2bp8gpxKn8rh1akSQjlynlV9NI+7J3CC7CUf3bGvoXIrb37C/lpJehS39KNtcGdaRufKauSfqx/7SxA0zyZC+r13f7ASbMaQFzm+/RRusTqozY/p/MsWx8QIDAQAB"
 ) ;
 ```
+For cat this file type this:
+```
+docker exec -it mailserver cat /tmp/docker-mailserver/opendkim/keys/example.com/mail.txt
+```
+
 remove ... and line break and should look like this:
 ```
 v=DKIM1; k=rsa; p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAqQMMqhb1S52Rg7VFS3EC6JQIMxNDdiBmOKZvY5fiVtD3Z+yd9ZV+V8e4IARVoMXWcJWSR6xkloitzfrRtJRwOYvmrcgugOalkmM0V4Gy/2aXeamuiBuUc4esDQEI3egmtAsHcVY1XCoYfs+9VqoHEq3vdr3UQ8zP/l+FP5UfcaJFCK/ZllqcO2P1GjIDVSHLdPpRHbMP/tU1a9mNZ5QMZBJ/JuJK/s+2bp8gpxKn8rh1akSQjlynlV9NI+7J3CC7CUf3bGvoXIrb37C/lpJehS39KNtcGdaRufKauSfqx/7SxA0zyZC+r13f7ASbMaQFzm+/RRusTqozY/p/MsWx8QIDAQAB
@@ -99,6 +104,23 @@ example.com. IN TXT "v=spf1 mx ~all"
 
 # Setting up TLS
 
+# Setting up SSL
+Bring Your Own Certificates
+You can also provide your own certificate files. Add these entries to your compose.yaml:
+```
+volumes:
+  - ./docker-data/dms/custom-certs/:/tmp/dms/custom-certs/:ro
+environment:
+  - SSL_TYPE=manual
+  # Values should match the file paths inside the container:
+  - SSL_CERT_PATH=/tmp/dms/custom-certs/public.crt
+  - SSL_KEY_PATH=/tmp/dms/custom-certs/private.key
+```
+you can use symlink
+```
+ln -s /path/to/public.crt docker-data/dms/custom-certs/public.crt
+ln -s /path/to/privkey.pem docker-data/dms/custom-certs/private.key
+```
 # Testing
 Here are some tools you can use to verify your configuration:  
 
