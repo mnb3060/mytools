@@ -16,7 +16,7 @@ dig @1.1.1.1 +short -x 11.22.33.44
 ```
 *Note: in CF you should set like this:
 `
-Name: anything
+Name: anything  
 value: mail.example.com
 `
 # Get files
@@ -44,27 +44,27 @@ docker compose up -d
 ## manage DMS config
 `docker exec -it <CONTAINER NAME> setup help`
 ```
-docker exec -it mail-server setup help
+docker exec -it mailserver setup help
 ```
 
 ## add some email user
 `docker exec -ti <CONTAINER NAME> setup email add user@example.com
 `
 ```
-docker exec -ti mail-server setup email add user@example.com
+docker exec -ti mailserver setup email add user@example.com
 ```
 ## add some Alias
 `docker exec -ti <CONTAINER NAME> setup alias add postmaster@example.com user@example.com`
 ```
-docker exec -ti mail-server setup alias add postmaster@example.com user@example.com
+docker exec -ti mailserver setup alias add postmaster@example.com user@example.com
 ```
 ### Generate keys
 #### Creating DKIM Keys
 `docker exec -it <CONTAINER NAME> setup config dkim`
 ```
-docker exec -it mail-server setup config dkim
+docker exec -it mailserver setup config dkim
 ```
-After running setup config dkim, your new DKIM key files (and OpenDKIM config) have been added to /tmp/docker-mailserver/opendkim/.
+After running setup config dkim, your new DKIM key files (and OpenDKIM config) have been added to /tmp/docker-mailserver/opendkim/ on mailserver OR `docker-data/dms/config/opendkim/keys/example.com`
 `
 This file was generated for use within a DNS zone file. The file name uses the DKIM selector it was generated with ( default DKIM selector is mail, which creates mail.txt_ ).
 `
@@ -95,11 +95,12 @@ example.com. IN TXT "v=spf1 mx ~all"
 # Setting up TLS
 
 # Testing
-Here are some tools you can use to verify your configuration:
+Here are some tools you can use to verify your configuration:  
 
-MX Toolbox
-DMARC Analyzer
-mail-tester.com
-multiRBL.valli.org
-internet.nl
+MX Toolbox  
+
+DMARC Analyzer  
+mail-tester.com  
+multiRBL.valli.org  
+internet.nl  
  
