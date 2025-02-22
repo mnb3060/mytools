@@ -13,5 +13,5 @@ unset( $fields['billing_email']);
 return $fields;
 }
 ```
-
+src: [text](https://mahdisweb.net/blog/make-the-email-field-optional-on-the-checkout-page/)
 # Plugin Tips
