@@ -131,3 +131,7 @@ mail-tester.com
 multiRBL.valli.org  
 internet.nl  
  
+# How can I configure a catch-all?
+Considering you want to redirect all incoming e-mails for the domain example.com to user1@example.com, add the following line to docker-data/dms/config/postfix-virtual.cf:
+
+@example.com user1@example.com
